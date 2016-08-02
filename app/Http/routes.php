@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+Route::get ( '/', function ()
+{
     return '<h1>First Logic with Laravel</h1>';
 });
 
-Route::get('/other', function () {
+Route::get ( '/other', function ()
+{
     return '<h1>Other logic with Laravel</h1>';
 });
+
+Route::get ( '/products', 'ProductController@list' );

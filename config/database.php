@@ -54,13 +54,14 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '33060'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'stock'),
-            'username' => env('DB_USERNAME', 'homestead'),
-            'password' => env('DB_PASSWORD', 'JNY0AlDbk%1L'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', 'root'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
+            'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'prefix' => '',
             'strict' => false,
             'engine' => null,

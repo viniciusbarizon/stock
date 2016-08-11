@@ -1,6 +1,7 @@
 <html>
 	<head>
-		<link href="css/app.css" rel="stylesheet">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<title>Stock Control</title>
 	</head>
 	<body>
@@ -16,8 +17,9 @@
 						<td><?php echo $product->value; ?></td>
 						<td><?php echo $product->description; ?></td>
 						<td><?php echo $product->quantity; ?></td>
+						<td><a href="products/view/<?php echo $product->id; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></td>
 					</tr>
-				<?php	
+				<?php
 				}
 				?>
 			</table>

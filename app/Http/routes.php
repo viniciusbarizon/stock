@@ -16,11 +16,11 @@ Route::get ( '/', function ()
     return '<h1>First Logic with Laravel</h1>';
 });
 
-Route::get ( 'other', function ()
+Route::get ( '/other', function ()
 {
     return '<h1>Other logic with Laravel</h1>';
 });
 
-Route::get ( 'products', 'ProductController@list' );
+Route::get ( '/products', 'ProductController@list' );
 
-Route::get ( 'products/view/{id}', 'ProductController@view' )->where ( 'id', '[0-9]+' );
+Route::get ( '/products/view/{id}', 'ProductController@view' )->where ( 'id', '[0-9]+' );

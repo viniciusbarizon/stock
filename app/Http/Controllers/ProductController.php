@@ -10,7 +10,7 @@ class ProductController extends Controller
 	{
 		$products = DB::select ( 'SELECT * FROM products' );
 
-		return view ( 'product.list' )->with ( 'products', $products );
+		return view ( 'products.list' )->with ( 'products', $products );
 	}
 
 	public function view ( $id )
@@ -21,6 +21,28 @@ class ProductController extends Controller
 			return 'This product does not exist';
 		}
 
-		return view ( 'product.view' )->with ( 'product', $product[0] );
+		return view ( 'products.view' )->with ( 'product', $product[0] );
+	}
+
+	public function new ()
+	{
+		return view ( 'products.form' );
+	}
+
+	public function add ()
+	{
+		$name = Request::input ( 'name' );
+		$description = Request::input ( 'description' );
+		$value = Request::input ( 'value' );
+		$quantity = Request::input ( 'quantity' );
+
+		DB::table ( 'products' )->insert ( [
+			'name' => $name,
+			'value' => $value,
+			'description' => $description,
+			'quantity' => $quantity
+		] );
+
+		return view ( 'products.added' )->with ( 'name', $name );
 	}
 }

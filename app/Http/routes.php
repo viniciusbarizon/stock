@@ -24,3 +24,7 @@ Route::get ( '/other', function ()
 Route::get ( '/products', 'ProductController@list' );
 
 Route::get ( '/products/view/{id}', 'ProductController@view' )->where ( 'id', '[0-9]+' );
+
+Route::get ( 'products/new', 'ProductController@new' );
+
+Route::post ( 'products/add', 'ProductController@add' );

@@ -17,7 +17,8 @@
 
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="products">List</a>
+							<a href="/products">List</a>
+							<a href="/products/new">New</a>
 						</li>
 					</ul>
 				</div>

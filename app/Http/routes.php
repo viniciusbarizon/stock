@@ -21,10 +21,34 @@ Route::get ( '/other', function ()
     return '<h1>Other logic with Laravel</h1>';
 });
 
-Route::get ( '/products', 'ProductController@list' );
+Route::get ( '/products', [
+	'as' => 'products.index',
+	'uses' => 'ProductController@list'
+] );
 
-Route::get ( '/products/view/{id}', 'ProductController@view' )->where ( 'id', '[0-9]+' );
+Route::get ( '/products/view/{id}', 'ProductController@view' )
+	->where ( 'id', '[0-9]+' );
 
-Route::get ( 'products/new', 'ProductController@new' );
+Route::get ( '/products/new', [
+	'as' => 'products.new',
+	'uses' => 'ProductController@new'
+] );
 
-Route::post ( 'products/add', 'ProductController@add' );
+Route::post ( '/products/create', [
+	'as' => 'products.create',
+	'uses' => 'ProductController@create'
+] );
+
+Route::get ( '/products/json', [
+	'as' => 'products.json',
+	'uses' => 'ProductController@listJSON'
+] );
+
+Route::get ( '/products/edit/{id}', 'ProductController@edit' )
+	->where ( 'id', '[0-9]+' );
+
+Route::get ( '/products/delete/{id}', 'ProductController@delete' )
+	->where ( 'id', '[0-9]+' );
+
+Route::post ( '/products/update/{id}', 'ProductController@update' )
+	->where ( 'id', '[0-9]+' );

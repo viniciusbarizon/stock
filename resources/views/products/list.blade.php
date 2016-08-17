@@ -13,9 +13,19 @@
 					<td>{{ $product->value }}</td>
 					<td>{{ $product->description }}</td>
 					<td>{{ $product->quantity }}</td>
-					<td>
-						<a href="products/view/{{ $product->id }}">
+					<td align="center">
+						<a href="{{ action ( 'ProductController@view' ,$product->id ) }}">
 							<span class="glyphicon glyphicon-eye-open"></span>
+						</a>
+					</td>
+					<td align="center">
+						<a href="{{ action ( 'ProductController@edit' ,$product->id ) }}">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</a>
+					</td>
+					<td align="center">
+						<a href="{{ action ( 'ProductController@delete', $product->id ) }}">
+							<span class="glyphicon glyphicon-trash"></span>
 						</a>
 					</td>
 				</tr>
@@ -28,4 +38,11 @@
 			One or less items on stock
 		</span>
 	</h4>
+
+	@if ( old ( 'name' ) )
+		<div class="alert alert-success">
+			<strong>Success!</strong>
+			The product {{ old ( 'name' ) }} was added or updated.
+		</div>
+	@endif
 @stop

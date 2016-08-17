@@ -10,15 +10,15 @@
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="products">
+						<a class="navbar-brand" href="{{ route ( 'products.index' ) }}">
 							Stock Laravel
 						</a>
 					</div>
 
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="/products">List</a>
-							<a href="/products/new">New</a>
+							<a href="{{ route ( 'products.index' ) }}">List</a>
+							<a href="{{ route ( 'products.new' ) }}">New</a>
 						</li>
 					</ul>
 				</div>

@@ -3,7 +3,7 @@
 @section ( 'content' )
 	<h1>New Product</h1>
 
-	<form action="/products/add" method="post">
+	<form action="{{ route ( 'products.create' ) }}" method="post">
 		<input type="hidden" name="_token" value="{{{ csrf_token () }}}">
 
 		<div class="form-group">
@@ -26,6 +26,6 @@
 			<input name="quantity" type="number" class="form-control">
 		</div>
 
-		<button type="submit" class="btn btn-primary btn-block">Submit</button>
+		<button type="submit" class="btn btn-primary btn-block">Create</button>
 	</form>
 @stop

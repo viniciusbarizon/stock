@@ -97,6 +97,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'name' => [
+            'required' => 'The :attribute field can not be empty'
+        ],
     ],
 
     /*

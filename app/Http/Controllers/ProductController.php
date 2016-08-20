@@ -2,7 +2,9 @@
 namespace stock\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use stock\Product;
+use stock\Http\Requests\ProductsRequest;
 use Request;
 
 class ProductController extends Controller
@@ -32,9 +34,9 @@ class ProductController extends Controller
 		return view ( 'products.new' );
 	}
 
-	public function create ()
+	public function create ( ProductsRequest $request )
 	{
-		Product::create ( Request::all () );
+		Product::create ( $request::all () );
 		return redirect ()->route ( 'products.index' )->withInput ( Request::only ( 'name' ) );
 	}
 

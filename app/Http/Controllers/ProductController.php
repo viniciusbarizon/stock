@@ -9,6 +9,13 @@ use Request;
 
 class ProductController extends Controller
 {
+	public function __construct ()
+	{
+		$this->middleware ( 'auth', [
+			'only' => [ 'new', 'create', 'delete' ]
+		] );
+	}
+
 	public function list ()
 	{
 		$products = Product::all ();

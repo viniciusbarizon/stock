@@ -1,4 +1,4 @@
-@extends ( 'layout.main' )
+@extends ( 'layouts.main' )
 
 @section ( 'content' )
 	<h1>New Product</h1>

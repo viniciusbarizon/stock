@@ -52,3 +52,13 @@ Route::get ( '/products/delete/{id}', 'ProductController@delete' )
 
 Route::post ( '/products/update/{id}', 'ProductController@update' )
 	->where ( 'id', '[0-9]+' );
+
+Route::get('/home', 'HomeController@index');
+
+Route::controllers ( [
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController'
+] );
+
+Route::get('/login', 'LoginController@login');
+Route::auth();
